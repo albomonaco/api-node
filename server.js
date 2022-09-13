@@ -5,12 +5,11 @@ const rotas = {
     '/': 'Hello World!',
     '/livros': 'Which book do you want?',
     '/autores': 'Listing authors',
-    'editora': 'editora'
+    '/editora': 'Listing publishers'
 }
 
 const server = http.createServer((req,res) => {
     res.writeHead(200, {'Content-type': 'text/plain'});
-    console.log(req.url);
     res.end(rotas[req.url]);
 })
 
@@ -18,4 +17,6 @@ const server = http.createServer((req,res) => {
 server.listen(port, () => {
     console.log(`Ouvindo em http://localhost:${port}`);
 })
+
+
 
